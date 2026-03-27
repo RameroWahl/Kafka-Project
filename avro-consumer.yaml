@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: avro-consumer-job
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: avro-consumer
+          image: tracker:latest
+          env:
+            - name: MODE
+              value: "avro-consumer"
