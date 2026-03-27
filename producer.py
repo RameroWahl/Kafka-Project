@@ -8,6 +8,7 @@ from confluent_kafka import Producer
 
 producer_config = {
     "bootstrap.servers": os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka-service:9092"),
+    "acks": "all"
 }
 
 producer = Producer(producer_config)
